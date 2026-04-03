@@ -30,11 +30,11 @@ function imageCopy() {
 }
 
 // guide 폴더 복사
-function guideCopy() {
-    console.log("guide 파일을 복사합니다.");
-    return src(['./project/src/guide/**/*'])
-        .pipe(dest('./project/dist/guide'));
-}
+// function guideCopy() {
+//     console.log("guide 파일을 복사합니다.");
+//     return src(['./project/src/guide/**/*'])
+//         .pipe(dest('./project/dist/guide'));
+// }
 
 // ejs를 html로 변환
 function compileEjs() {
@@ -68,7 +68,8 @@ var scssOptions = {
 };
 
 function compileScss() {
-    return src('./project/src/scss/**/*.scss')
+    // 확장자 부분을 {scss,css}로 변경하여 두 종류 모두 읽어옵니다.
+    return src(['./project/src/scss/**/*.scss', './project/src/common/css/**/*.css'])
         .pipe(sourcemaps.init())
         .pipe(scss(scssOptions).on('error', scss.logError))
         .pipe(sourcemaps.write('../maps'))
@@ -104,6 +105,7 @@ function watcher() {
     });
 
     watch('project/src/scss/**/*.scss', watchOptions, series(compileScss));
+    watch('project/src/common/css/**/*.css', watchOptions, series(compileScss));
     watch('project/src/common/js/**/*.js', watchOptions, series(compileJs));
     watch('project/src/common/images/**/*', watchOptions, series(imageCopy));
 }
@@ -115,13 +117,14 @@ function browser(cb) {
             baseDir: './project/dist',
             directory: true,
         },
-        startPath: "/guide/filelist.html",
+        startPath: "/index.html",
     });
     cb();
 }
 
 // Task 등록
-const build = series(guideCopy, imageCopy, commonCopy, compileScss, compileEjs, compileJs);
+const build = series(imageCopy, commonCopy, compileScss, compileEjs, compileJs);
+//guideCopy
 
 exports.reset = series(clear, build);
 exports.build = build;
