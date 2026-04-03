@@ -1,0 +1,4 @@
+spowell-front.pub.iwi.co.kr {
+        reverse_proxy nginx-publish:8080
+        import common_remove_header
+}

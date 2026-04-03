@@ -1,0 +1,15 @@
+variables:
+  PROJECT_NAME: "spowell-front"
+  PROJECT_URI: "spowell-front.pub.iwi.co.kr"  #반드시 Uri 타입은 $PROJECT_NAME.pub.iwi.co.kr로 정합니다.
+
+stages:
+  - publish
+
+publish:
+  stage: publish
+  tags:
+    - "iworks-shell"
+  script:
+    - sudo mkdir -p "/data/publish/$PROJECT_URI"
+    - sudo cp -r ./project/dist/* "/data/publish/$PROJECT_URI"
+    - sudo chown -R iworks:iworks "/data/publish/$PROJECT_URI"
