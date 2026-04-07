@@ -29,6 +29,7 @@ const showDemo = () => {
                 const winW = window.innerWidth;
                 if (w.textContent.includes("Project Archive")) return isDesktop ? winW * -0.2 : winW * -0.1;
                 if (w.textContent.includes("Digital Experiences")) return isDesktop ? winW * 0.2 : winW * -0.1;
+
                 if (w.textContent.includes("Crafting Principled")) return isDesktop ? winW * 1.9 : winW * 0.7;
                 if (w.textContent.includes("UI through Technical")) return isDesktop ? winW * -0.1 : winW * -0.3;
                 if (w.textContent.includes("Integrity and User-")) return isDesktop ? winW * 0.8 : winW * 0.6;
@@ -42,10 +43,11 @@ const showDemo = () => {
                 const winW = window.innerWidth;
                 if (w.textContent.includes("Project Archive")) return isDesktop ? winW * 0.1 : winW * 0.05;
                 if (w.textContent.includes("Digital Experiences")) return isDesktop ? winW * 0.1 : winW * -0.1;
-                if (w.textContent.includes("Crafting Principled")) return isDesktop ? winW * -0.01 : winW * -0.02;
-                if (w.textContent.includes("UI through Technical")) return isDesktop ? winW * 0.3 : winW * 0.15;
-                if (w.textContent.includes("Integrity and User-")) return isDesktop ? winW * 0.05 : winW * -0.1;
-                if (w.textContent.includes("Centric Design")) return isDesktop ? winW * 0.5 : winW * 0.3;
+
+                if (w.textContent.includes("Crafting Principled")) return isDesktop ? winW * 0.1 : winW * -0.02;
+                if (w.textContent.includes("UI through Technical")) return isDesktop ? winW * 0.1 : winW * 0.15;
+                if (w.textContent.includes("Integrity and User-")) return isDesktop ? winW * -0.1 : winW * -0.1;
+                if (w.textContent.includes("Centric Design")) return isDesktop ? winW * 0.4 : winW * 0.3;
                 
                 return (index % 2) ? (w.scrollWidth - winW + 600) * -1 : 600;
             };
@@ -56,7 +58,7 @@ const showDemo = () => {
                 {
                     x: xEnd,
                     opacity: 1,
-                    skewX: 0,
+                    skewX: 1,
                     scrollTrigger: { 
                         trigger: section, 
                         scrub: 1,
@@ -122,9 +124,9 @@ const initBgColorChange = () => {
 
   // 테마 전환 통합 함수 (GSAP 애니메이션 로직)
   const changeTheme = (theme) => {
-    gsap.to("body", { backgroundColor: theme.bgColor, duration: 0.8 });
+    gsap.to("body", { backgroundColor: theme.bgColor, duration: 0.2 });
     // 모든 .wrapper.text 요소를 한꺼번에 텍스트 색상 전환
-    gsap.to(".wrapper.text", { color: theme.textColor, duration: 0.8 });
+    gsap.to(".wrapper.text", { color: theme.textColor, duration: 0.2 });
   };
 
   scrollThemes.forEach((theme, index) => {

@@ -46,7 +46,8 @@
 	<script src="../common/js/jquery-3.4.1.min.js"></script>
 	<script src="../common/js/jquery-ui.min.js"></script>
 	
-
+	<link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css"> 
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script> 
     <!--
 	
 		
@@ -83,33 +84,11 @@
         <!-- 본문영역 -->
         <div class="layoutContent">
             <!-- Body -->
-            <!-- <div class="comContBox">
-    <div class="cptCont01">
-        <P>
-            TAEHYEONG'S
-            PORTFOLIO
-        </P>
-        <P>
-            안녕하세요. 
-            웹 퍼블리셔 김태형입니다.
-        </P>
-    </div>
-    <div class="cptCont02">
-        <p class="title">About</p>
-
-        <p>
-            <b>전문성과 원칙을 바탕으로 사용자 경험을 설계하는 개발자</b>
-            10년의 여정 동안 기술적 원칙과 사용자 중심의 가치를 코드로 증명해 온 UI 개발자 김태형입니다.
-
-            저는 변화가 빠른 프론트엔드 환경 속에서도 웹 표준과 접근성이라는 핵심 가치를 놓치지 않으며, 복잡한 비즈니스 로직을 견고한 UI로 구현하는 데 주력해 왔습니다.
-
-            대규모 프로젝트의 표준화 작업부터 기술적 소통이 필요한 실무 현장까지, 다양한 이해관계자 사이의 가교 역할을 수행하며 조직의 장기적인 성장을 도모하는 것을 즐깁니다. 단순히 화면을 그리는 작업을 넘어, 데이터와 피드백을 기반으로 문제의 본질을 꿰뚫고 서비스의 완성도를 높이는 데 최선을 다하겠습니다.
-        </p>
-    </div>
-</div> -->
+            <!--cursor setting-->
 <div class="cursor"></div>
 <div class="cursor-follower"></div>
 
+<!--loading area-->
 <div class="loader df aic jcc">
   <div>
     <h1>Loading</h1>
@@ -117,7 +96,9 @@
   </div>
 </div>
 
+<!--contents-->
 <div class="demo-wrapper">
+  <!--header-->
   <header class="df aic jcc intro">
     <div>
       <h1>TAEHYEONG'S PORTFOLIO</h1>
@@ -125,6 +106,64 @@
     </div>
   </header>
 
+  <!--introduction-->
+
+  <div class="introContents df aic jcc ">
+    <p class="title" data-aos="slide-up" data-aos-offset="200" data-aos-easing="ease-in-out-cubic" data-aos-duration="600">
+      Core Value
+    </p>
+    <p class="desc" data-aos="slide-up" data-aos-duration="800">
+      "10년의 집요함으로 웹 표준의 기준을 세우고, 접근성의 사각지대를 해소합니다."<br/></br/>
+      
+      단순한 화면 구현을 넘어, <br/>
+      어떠한 복잡한 비즈니스 환경에서도 유연하고 견고하게 작동하는 UI 구조를 설계합니다.<br/>
+      수십 개의 공공 서비스 웹 접근성 인증을 완수했던 책임감과 프로젝트 리딩 능력을 바탕으로,<br/> 
+      귀사의 디지털 플랫폼이 모든 사용자에게 평등하고 고도화된 경험을 제공하도록 기여하겠습니다.
+    </p>
+
+    <p class="title" data-aos="slide-up" data-aos-offset="200" data-aos-easing="ease-in-out-cubic" data-aos-duration="1000">
+      Skills
+    </p>
+    <!-- <p class="desc">
+      Language : HTML5, CSS3, SCSS, JAVASCRIPT(ES6+)
+      Frameworks/Libraries : React, Thymeleaf, jQuery
+      Workflow & Tools: Figma, Git, SVN, Webpack/Gulp, Jira/Confluence
+    </p> -->
+
+    <ul  data-aos-duration="1200">
+      <li data-aos="flip-up" data-aos-duration="800">
+        <p class="title">01. LANGUAGES</p>
+        <ul>
+          <li>HTML5</li>
+          <li>CSS3</li>
+          <li>SCSS</li>
+          <li>JavaScript(ES6+)</li>
+        </ul>
+      </li>
+
+      <li data-aos="flip-up" data-aos-duration="1500">
+        <p class="title">02. ARCHITECTURE</p>
+        <ul>
+          <li>React</li>
+          <li>Thymeleaf</li>
+          <li>jQuery</li>
+          <li>Gulp</li>
+        </ul>
+      </li>
+
+      <li data-aos="flip-up" data-aos-duration="2200">
+        <p class="title">03. COLLABORATION</p>
+        <ul>
+          <li>Figma</li>
+          <li>SVN</li>
+          <li>Git</li>
+          <li>Confluence</li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+
+  <!--portfolio List-->
   <section class="demo-text start">
     <div class="wrapper text">
       Project Archive
@@ -214,7 +253,7 @@
 
   <section class="demo-text">
     <div class="wrapper text">
-       UI through Technical
+      UI through Technical
     </div>
   </section>
   <section class="demo-text end">
@@ -229,6 +268,8 @@
   </section>
   <div style="padding-bottom:1000px;"></div>
 </div>
+
+<script> AOS.init();</script>
         </div>
         <!-- //본문영역 -->
 

@@ -266,4 +266,35 @@ label {
 	background: rgba(135, 205, 51, 0.2);
 	border: none;
 }
+
+.introContents {
+	width: 100%;
+	position: relative;
+	display: flex;
+	flex-flow: column;
+	align-items: flex-start;
+	justify-content: flex-start;
+}
+.introContents > .title {
+	width: 100%;
+	font-size: 35px;
+	font-weight: bold;
+	text-align: left;
+}
+.introContents > .desc {
+	width: 100%;
+	font-size: 24px;
+	font-weight: bold;
+	text-align: left;
+}
+.introContents > ul {
+	display: flex;
+	flex-flow: row nowrap;
+	align-items: center;
+	justify-content: center;
+	width: 100%;
+}
+.introContents > ul > li {
+	width: 200px;
+}
 /*# sourceMappingURL=../maps/style.css.map */
