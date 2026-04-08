@@ -1,27 +1,4 @@
 @charset "UTF-8";
-/* 본고딕 Thin */
-/*
-@font-face {
-    font-family: "Pretendard GOV";
-    font-style: normal;
-    font-weight: 200;
-    src: url("../../common/webfont/PretendardGOV-Thin.woff") format("font-woff"),
-      url("../../common/webfont/PretendardGOV-Thin.woff2") format("font-woff2"),
-      url("../../common/webfont/PretendardGOV-Thin.otf") format("opentype");   
-  }
-*/
-/* 본고딕 Light */
-/*
-  @font-face {
-    font-family: "Pretendard GOV";
-    font-style: normal;
-    font-weight: 300;
-    src: url("../../common/webfont/PretendardGOV-Light.woff") format("font-woff"),
-      url("../../common/webfont/PretendardGOV-Light.woff2") format("font-woff2"),
-      url("../../common/webfont/PretendardGOV-Light.otf") format("opentype");
-
-  }
-*/
 /* 본고딕 Regular */
 @font-face {
 	font-family: "Pretendard GOV";
@@ -50,25 +27,27 @@
 	font-weight: 700;
 	src: url("../../common/webfont/PretendardGOV-Bold.woff") format("font-woff"), url("../../common/webfont/PretendardGOV-Bold.woff2") format("font-woff2"), url("../../common/webfont/PretendardGOV-Bold.otf") format("opentype");
 }
-/* 본고딕 Bold */
-/*
-  @font-face {
-    font-family: "Pretendard GOV";
-    font-style: normal;
-    font-weight: 900;
-    src: url("../../common/webfont/PretendardGOV-ExtraBold.woff") format("font-woff"),
-      url("../../common/webfont/PretendardGOV-ExtraBold.woff2") format("font-woff2"),
-      url("../../common/webfont/PretendardGOV-ExtraBold.otf") format("opentype");
-  }
-*/
 * {
 	box-sizing: border-box;
-	font-family: "Pretendard GOV";
-	letter-spacing: -0.4px;
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	cursor: none !important;
 	line-height: 150%;
 }
 
-body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, code, form, fieldset, legend, textarea, p, blockquote, th, td, input, select, textarea, button {
+body {
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+	transition: background-color 0.8s ease;
+	background-color: #ffffff;
+	color: #000000;
+	overflow: hidden;
+}
+
+div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, code, form, fieldset, legend, textarea, p, blockquote, th, td, input, select, textarea, button {
 	margin: 0;
 	padding: 0;
 }
@@ -113,7 +92,7 @@ body {
 body, th, td, input, select, textarea, button {
 	font-size: 10px;
 	line-height: 150%;
-	font-family: "Pretendard GOV";
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
 	color: #000;
 } /* color값은 디자인가이드에 맞게사용 */
 a {
@@ -202,6 +181,21 @@ label {
 	border: 0;
 }
 
+::selection {
+	background: #87cd33;
+	color: white;
+}
+
+/* 1. Root 설정 (반응형 폰트 크기) */
+:root {
+	font-size: 16px;
+}
+
+@media (max-width: 500px) {
+	:root {
+		font-size: 14px;
+	}
+}
 :root {
 	--prm1: #21409A;
 	--prm2: #2C99F2;
@@ -269,23 +263,33 @@ label {
 
 .introContents {
 	width: 100%;
+	height: 100vh;
 	position: relative;
 	display: flex;
 	flex-flow: column;
 	align-items: flex-start;
 	justify-content: flex-start;
-}
-.introContents > .title {
-	width: 100%;
-	font-size: 35px;
-	font-weight: bold;
-	text-align: left;
+	max-width: 1400px;
+	margin: 0 auto;
 }
 .introContents > .desc {
 	width: 100%;
-	font-size: 24px;
+	position: relative;
+	font-size: 16px;
+	font-weight: 400;
+	color: #666;
 	font-weight: bold;
-	text-align: left;
+	text-align: center;
+	position: relative;
+	z-index: 99;
+}
+.introContents > .desc > span {
+	display: block;
+	margin-bottom: 40px;
+	font-size: 32px;
+	font-weight: 500;
+	line-height: 150%;
+	color: #000;
 }
 .introContents > ul {
 	display: flex;
@@ -293,8 +297,158 @@ label {
 	align-items: center;
 	justify-content: center;
 	width: 100%;
+	gap: 40px;
+	margin-top: 100px;
 }
 .introContents > ul > li {
-	width: 200px;
+	width: 100%;
+	border: 1px solid #dfdfdf;
+	border-radius: 15px;
+	padding: 40px 20px;
+}
+.introContents > ul > li::before {
+	content: "";
+	position: absolute;
+	top: 20px;
+	left: 0;
+	width: 8px;
+	height: 30px;
+	background: #000;
+	border-radius: 0 5px 5px 0;
+}
+.introContents > ul > li > .title {
+	font-size: 20px;
+	font-weight: 500;
+	line-height: 1;
+}
+
+/*공통사용*/
+.df {
+	display: flex;
+}
+
+.aic {
+	align-items: center;
+}
+
+.jcc {
+	justify-content: center;
+}
+
+/*로딩*/
+.loader {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background: black;
+	color: white;
+	z-index: 9999;
+}
+.loader > h1 {
+	font-size: 5rem;
+	text-align: center;
+}
+.loader > h2 {
+	font-size: 2rem;
+	text-align: center;
+}
+
+.allWrapper {
+	overflow-x: hidden;
+	/*헤더*/
+}
+.allWrapper header {
+	height: 100vh;
+}
+.allWrapper header > div > h1 {
+	font-size: 5rem;
+	text-align: center;
+}
+.allWrapper header > div > h2 {
+	font-size: 2rem;
+	text-align: center;
+}
+.allWrapper {
+	/*갤러리*/
+}
+.allWrapper .gallery {
+	position: relative;
+	z-index: 99;
+}
+.allWrapper .gallery > ul.wrapper {
+	padding-left: 1rem;
+	list-style: none;
+	display: flex;
+}
+.allWrapper .gallery > ul.wrapper li {
+	position: relative;
+	flex-shrink: 0;
+	width: clamp(500px, 60vw, 800px);
+	padding-right: 1rem;
+	overflow: hidden;
+	z-index: 99;
+}
+.allWrapper .gallery > ul.wrapper li > a img {
+	width: 100%;
+	height: auto;
+	display: block;
+	background: #f0f0f0;
+}
+.allWrapper .gallery > ul.wrapper li::before {
+	display: none;
+}
+.allWrapper .gallery > ul.wrapper li:hover::before {
+	content: "";
+	width: 100%;
+	height: 100%;
+	background: rgba(0, 0, 0, 0.5);
+}
+.allWrapper .gallery > ul.wrapper li::after {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: #000;
+	transform-origin: right;
+	transition: transform 1s cubic-bezier(0.77, 0, 0.175, 1);
+}
+.allWrapper .gallery > ul.wrapper li.reveal::after {
+	transform: scaleX(0);
+}
+.allWrapper .gallery:not(.last) {
+	padding-bottom: 1rem;
+}
+.allWrapper .textWrap {
+	position: relative;
+	z-index: 99;
+}
+.allWrapper .textWrap .text {
+	display: flex;
+	font-size: clamp(3rem, 8vw, 10rem);
+	line-height: 1;
+	font-weight: 900;
+	white-space: nowrap;
+}
+
+a, a:visited {
+	color: #4e9815;
+	text-decoration: none;
+}
+
+.circle {
+	position: absolute;
+	top: -1000px;
+	right: 300px;
+	width: 20px;
+	height: 20px;
+	border-radius: 40%;
+	opacity: 0;
+	margin: -19px auto;
+	transition: transform 1s cubic-bezier(0.14, 0.15, 0.13, 0.99);
+	z-index: 9;
 }
 /*# sourceMappingURL=../maps/style.css.map */

@@ -5,13 +5,13 @@
 <!--loading area-->
 <div class="loader df aic jcc">
   <div>
-    <h1>Loading</h1>
+    <h1 class="loadText">Loading</h1>
     <h2 class="loader--text">0%</h2>
   </div>
 </div>
 
 <!--contents-->
-<div class="demo-wrapper">
+<div class="allWrapper">
   <!--header-->
   <header class="df aic jcc intro">
     <div>
@@ -21,13 +21,10 @@
   </header>
 
   <!--introduction-->
-
   <div class="introContents df aic jcc ">
-    <p class="title" data-aos="slide-up" data-aos-offset="200" data-aos-easing="ease-in-out-cubic" data-aos-duration="600">
-      Core Value
-    </p>
+
     <p class="desc" data-aos="slide-up" data-aos-duration="800">
-      "10년의 집요함으로 웹 표준의 기준을 세우고, 접근성의 사각지대를 해소합니다."<br/></br/>
+      <span>"견고한 기술로 웹 표준의 기준을 정의하며, 모두를 위한 접근성으로 사각지대를 없앱니다."</span>
       
       단순한 화면 구현을 넘어, <br/>
       어떠한 복잡한 비즈니스 환경에서도 유연하고 견고하게 작동하는 UI 구조를 설계합니다.<br/>
@@ -35,9 +32,6 @@
       귀사의 디지털 플랫폼이 모든 사용자에게 평등하고 고도화된 경험을 제공하도록 기여하겠습니다.
     </p>
 
-    <p class="title" data-aos="slide-up" data-aos-offset="200" data-aos-easing="ease-in-out-cubic" data-aos-duration="1000">
-      Skills
-    </p>
     <!-- <p class="desc">
       Language : HTML5, CSS3, SCSS, JAVASCRIPT(ES6+)
       Frameworks/Libraries : React, Thymeleaf, jQuery
@@ -78,109 +72,114 @@
   </div>
 
   <!--portfolio List-->
-  <section class="demo-text start">
+  <section class="textWrap start">
     <div class="wrapper text">
       Project Archive
     </div>
   </section>
-  <section class="demo-text ">
+  <section class="textWrap ">
     <div class="wrapper text">
       Digital Experiences
     </div>
   </section>
 
-  <section class="demo-gallery ">
+  <section class="gallery ">
     <ul class="wrapper">
       <li>
-        <img src="" width="1240" height="874">
+        <a href="javascript:void(0)"><img src="" width="1240" height="874"></a>
       </li>
       <li>
-        <img src="" width="1240" height="874">
+        <a href="javascript:void(0)"><img src="" width="1240" height="874"></a>
       </li>
       <li>
-        <img src="" width="1240" height="874">
+        <a href="javascript:void(0)"><img src="" width="1240" height="874"></a>
       </li>
     </ul>
   </section>
 
-  <section class="demo-gallery">
+  <section class="gallery">
     <ul class="wrapper">
       <li>
-        <img src="" width="1240" height="874">
+        <a href="javascript:void(0)"><img src="" width="1240" height="874"></a>
       </li>
       <li>
-        <img src="" width="1240" height="874">
+        <a href="javascript:void(0)"><img src="" width="1240" height="874"></a>
       </li>
       <li>
-        <img src="" width="1240" height="874">
+        <a href="javascript:void(0)"><img src="" width="1240" height="874"></a>
       </li>
     </ul>
   </section>
 
-  <section class="demo-gallery">
+  <section class="gallery">
     <ul class="wrapper">
       <li>
-        <img src="" width="1240" height="874">
+        <a href="javascript:void(0)"><img src="" width="1240" height="874"></a>
       </li>
       <li>
-        <img src="" width="1240" height="874">
+        <a href="javascript:void(0)"><img src="" width="1240" height="874"></a>
       </li>
       <li>
-        <img src="" width="1240" height="874">
+        <a href="javascript:void(0)"><img src="" width="1240" height="874"></a>
       </li>
     </ul>
   </section>
 
-  <section class="demo-gallery">
+  <section class="gallery">
     <ul class="wrapper">
       <li>
-        <img src="" width="1240" height="874">
+        <a href="javascript:void(0)"><img src="" width="1240" height="874"></a>
       </li>
       <li>
-        <img src="" width="1240" height="874">
+        <a href="javascript:void(0)"><img src="" width="1240" height="874"></a>
       </li>
       <li>
-        <img src="" width="1240" height="874">
+        <a href="javascript:void(0)"><img src="" width="1240" height="874"></a>
       </li>
     </ul>
   </section>
 
-  <section class="demo-gallery">
+  <section class="gallery">
     <ul class="wrapper">
       <li>
-        <img src="" width="1240" height="874">
+        <a href="javascript:void(0)"><img src="" width="1240" height="874"></a>
       </li>
       <li>
-        <img src="" width="1240" height="874">
+        <a href="javascript:void(0)"><img src="" width="1240" height="874"></a>
       </li>
       <li>
-        <img src="" width="1240" height="874">
+        <a href="javascript:void(0)"><img src="" width="1240" height="874"></a>
       </li>
     </ul>
   </section>
 
-  <section class="demo-text">
+  <section class="textWrap">
     <div class="wrapper text">
       Crafting Principled
     </div>
   </section>
 
-  <section class="demo-text">
+  <section class="textWrap">
     <div class="wrapper text">
       UI through Technical
     </div>
   </section>
-  <section class="demo-text end">
+  <section class="textWrap end">
     <div class="wrapper text">
       Integrity and User-
     </div>
   </section>
-  <section class="demo-text">
+  <section class="textWrap">
     <div class="wrapper text">
       Centric Design.
     </div>
   </section>
+
   <div style="padding-bottom:1000px;"></div>
 </div>
 
-<script> AOS.init();</script>
+<script> 
+  AOS.init();
+  scrollerSmoother();
+
+</script>
